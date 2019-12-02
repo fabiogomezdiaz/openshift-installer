@@ -1,6 +1,6 @@
 locals {
   mask = "${element(split("/", var.machine_cidr), 1)}"
-  gw   = "${cidrhost(var.machine_cidr,1)}"
+  gw   = "192.168.1.1"
 
   ignition_encoded = "data:text/plain;charset=utf-8;base64,${base64encode(var.ignition)}"
 }
@@ -35,7 +35,7 @@ IPADDR=${local.ip_addresses[count.index]}
 PREFIX=${local.mask}
 GATEWAY=${local.gw}
 DOMAIN=${var.cluster_domain}
-DNS1=1.1.1.1
+DNS1=192.168.1.118
 DNS2=9.9.9.9
 EOF
   }

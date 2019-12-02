@@ -84,7 +84,7 @@ module "compute" {
   memory           = "8192"
 }
 
-module "dns" {
+/*module "dns" {
   source = "./route53"
 
   base_domain         = "${var.base_domain}"
@@ -95,4 +95,4 @@ module "dns" {
   control_plane_ips   = ["${module.control_plane.ip_addresses}"]
   compute_count       = "${var.compute_count}"
   compute_ips         = ["${module.compute.ip_addresses}"]
-}
+}*/
